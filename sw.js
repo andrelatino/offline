@@ -1,10 +1,9 @@
-var CACHE_NAME = 'my-site-cache-v4';
+var CACHE_NAME = 'my-site-cache-v5';
 var urlsToCache = [
-  './index.html',
-  './styles/main.css',
-  './scripts/main.js',
-  './sw.js',
-  './media/'
+  'sw.js',
+  'index.html',
+  'main.css',
+  'main.js'
 ];
 
 self.addEventListener('install', function(event) {
