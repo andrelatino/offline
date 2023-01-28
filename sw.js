@@ -1,4 +1,4 @@
-var CACHE_VERSION = "v3";
+var CACHE_VERSION = "v4";
 var CACHE = "pwabuilder-adv-cache-" + CACHE_VERSION;
 const offlineUrl = "offline.html";
 
