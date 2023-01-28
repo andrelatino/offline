@@ -1,4 +1,4 @@
-var CACHE_VERSION = "v2";
+var CACHE_VERSION = "v3";
 var CACHE = "pwabuilder-adv-cache-" + CACHE_VERSION;
 const offlineUrl = "offline.html";
 
@@ -22,7 +22,7 @@ self.addEventListener("activate", (event) => {
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
-                    if (cacheName !== CACHE) {
+                    if (cacheName.startsWith("pwabuilder-adv-cache-") && cacheName !== CACHE) {
                         return caches.delete(cacheName);
                     }
                 })
