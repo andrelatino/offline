@@ -1,4 +1,4 @@
-var CACHE_VERSION = "v7";
+var CACHE_VERSION = "v8";
 var CACHE = "pwa-" + CACHE_VERSION;
 
 // Call install event

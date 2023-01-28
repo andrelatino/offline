@@ -1,0 +1,19 @@
+
+ {
+    "background_color": "#456BD9",
+    "description": "Progressive Web App case studies.",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "name": "PWA Site",
+    "orientation": "natural",
+    "short_name": "PWA Site",
+    "start_url": "./index.html",
+    "theme_color": "#456BD9"
+  }
