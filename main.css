@@ -1,3 +1,7 @@
-h1 {
+online-h1 {
+    color: black;
+}
+
+offline-h1 {
     color: red;
 }
