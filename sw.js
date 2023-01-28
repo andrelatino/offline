@@ -1,6 +1,5 @@
-// This is the service worker with the advanced caching
-
-var CACHE = "pwabuilder-adv-cache";
+var CACHE_VERSION = "v1";
+var CACHE = "pwabuilder-adv-cache-" + CACHE_VERSION;
 const offlineUrl = "offline.html";
 
 // Call install event
@@ -22,9 +21,9 @@ self.addEventListener("activate", (event) => {
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== CACHE) {
-                        return caches.delete(cache);
+                cacheNames.map((cacheName) => {
+                    if (cacheName !== CACHE) {
+                        return caches.delete(cacheName);
                     }
                 })
             );
