@@ -2,7 +2,7 @@
  {
     "background_color": "#456BD9",
     "description": "Progressive Web App case studies.",
-    "display": "standalone",
+    "display": "fullscreen",
     "icons": [
       {
         "src": "./android-chrome-512x512.png",
