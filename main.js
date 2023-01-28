@@ -9,8 +9,7 @@ window.addEventListener('offline', updateIndicator);
 function updateIndicator() {
     if (navigator.onLine) {
         alert ('is online')
+    }else{
+        alert ('is offline')
     }
-    if (!navigator.onLine) {
-      alert ('is offline')
-  } 
 }

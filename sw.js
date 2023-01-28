@@ -1,6 +1,5 @@
-var CACHE_VERSION = "v1";
-var CACHE = "pwabuilder-adv-cache-" + CACHE_VERSION;
-const offlineUrl = "offline.html";
+var CACHE_VERSION = "v4";
+var CACHE = "pwa-" + CACHE_VERSION;
 
 // Call install event
 self.addEventListener("install", (event) => {
@@ -10,7 +9,7 @@ self.addEventListener("install", (event) => {
                 "./index.html",
                 "./main.css",
                 "./main.js",
-                offlineUrl
+                "./sw.js"
             ])
         })
     )
@@ -22,7 +21,7 @@ self.addEventListener("activate", (event) => {
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
-                    if (cacheName.startsWith("pwabuilder-adv-cache-") && cacheName !== CACHE) {
+                    if (cacheName.startsWith("pwa-") && cacheName !== CACHE) {
                         return caches.delete(cacheName);
                     }
                 })
@@ -39,7 +38,7 @@ self.addEventListener("fetch", (event) => {
                 if (response) {
                     return response;
                 } else if (event.request.headers.get("accept").includes("text/html")) {
-                    return caches.match(offlineUrl);
+                    return caches.match("./index.html");
                 }
             });
         })
