@@ -1,36 +1,19 @@
-.title-h1 {
-    color: black;
-}
-#offline-message {
-    display: none;
-    background-color: #f2dede;
-    color: #a94442;
-    padding: 15px;
-    text-align: center;
-}
 
-.blink {
-    animation: blink-animation 1s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;
-  }
-  @keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
-  }
-  @-webkit-keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
-  }
-  h1.title-h1 {
-    text-align: center;
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6, label {
+    font-family: system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif!important;
 }
-.rojo{
-    color:red;
-    font-size: 50px;
+html, body{
+  margin: 0;
+  background-color: #456BD9;
 }
-.verde{
-    color:#00d400;
-    font-size: 50px;
+.grid {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.title-h1 {
+  color: white;
+  font-weight: 400;
+  font-size: 33px;
 }
