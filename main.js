@@ -7,9 +7,10 @@ window.addEventListener('online',  updateIndicator);
 window.addEventListener('offline', updateIndicator);
 
 function updateIndicator() {
-    if (!navigator.onLine) {
-        document.getElementById("offline-message").style.display = "block";
-    } else {
-        document.getElementById("offline-message").style.display = "none";
+    if (navigator.onLine) {
+        alert ('is online')
     }
+    if (!navigator.onLine) {
+      alert ('is offline')
+  } 
 }
