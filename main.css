@@ -1,7 +1,10 @@
-.online-h1 {
+.title-h1 {
     color: black;
 }
-
-.offline-h1 {
-    color: red;
+#offline-message {
+    display: none;
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 15px;
+    text-align: center;
 }
