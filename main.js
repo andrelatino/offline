@@ -13,3 +13,14 @@ function updateIndicator() {
         alert ('is offline')
     }
 }
+
+if (navigator.serviceWorker.controller) {
+  navigator.serviceWorker.controller.postMessage("skipWaiting");
+}
+if (navigator.serviceWorker.controller) {
+  navigator.serviceWorker.oncontrollerchange = function() {
+      if (confirm("New version available. Reload?")) {
+          window.location.reload();
+      }
+  };
+}

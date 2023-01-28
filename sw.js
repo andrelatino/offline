@@ -1,4 +1,4 @@
-var CACHE_VERSION = "v4";
+var CACHE_VERSION = "v5";
 var CACHE = "pwa-" + CACHE_VERSION;
 
 // Call install event
@@ -26,6 +26,8 @@ self.addEventListener("activate", (event) => {
                     }
                 })
             );
+        }).then(() => {
+            return self.clients.claim();
         })
     );
 });
@@ -43,4 +45,28 @@ self.addEventListener("fetch", (event) => {
             });
         })
     );
+});
+
+// Show an update message and reload the page
+self.addEventListener("message", (event) => {
+    if (!event.data) {
+        return;
+    }
+
+    switch (event.data) {
+        case "skipWaiting":
+            self.skipWaiting();
+            break;
+        default:
+            // NOOP
+            break;
+    }
+});
+
+self.addEventListener("controllerchange", () => {
+    if (navigator.serviceWorker.controller) {
+        if (confirm("New version available. Reload?")) {
+            window.location.reload();
+        }
+    }
 });
